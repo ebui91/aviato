@@ -1,0 +1,16 @@
+.App {
+  background: rgb(0,130,139);
+  color: white;
+}
+
+#logo{
+  background: rgb(254,215,90);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+}

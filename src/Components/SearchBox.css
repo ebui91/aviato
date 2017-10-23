@@ -1,0 +1,33 @@
+.search-input, .calendar{
+  margin: 10px;
+  box-shadow: 1px 1px 1px white;
+}
+
+.search{
+  padding-top: 10px;
+  margin-left: 35px;
+}
+
+.btn-transparent {
+    background: transparent !important;
+    color: white !important;
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    border: 2px solid white !important;
+    box-shadow: 1px 1px 1px white;
+}
+
+.btn-transparent:hover {
+    color: black !important;
+    background-color: white !important;
+}
+
+.searchbar{
+  margin-left: 25px;
+}
+
+.searchBox{
+  background: #111;
+}
