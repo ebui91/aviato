@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SearchBox from './Components/SearchBox.js';
 import Results from './Components/Results';
-import Search from './Components/Search';
 import axios from 'axios';
 import logo from './images/aviato-logo.png';
 import './App.css'
@@ -40,8 +39,8 @@ class App extends Component {
 
     axios.post('http://localhost:3000/api/flights', this.state)
     .then(response=>{
-      console.log("response", response.data)
-      this.setState({results: response.data.trips});
+      console.log("response", response.data.trips.tripOption)
+      this.setState({results: response.data.trips.tripOption});
     })
   }
 
@@ -86,8 +85,8 @@ class App extends Component {
 
         <SearchBox submitSearch={this.submitSearch} handleOriginChange={this.handleOriginChange} handleDestChange={this.handleDestChange} handleDateChange={this.handleDateChange} handleDate2Change={this.handleDate2Change} handlePassChange={this.handlePassChange}/>
         <div>
-          {this.state.results.length > 0 && this.state.results.map((results, i)=>
-            <Results results={results}/>)
+          {this.state.results.length > 0 && this.state.results.map((option, i)=>
+            <Results option={option} key={i}/>)
             }
         </div>
       </div>

@@ -1,52 +1,32 @@
 import React, {Component} from 'react';
-
+import './Results.css';
 
 class Results extends Component{
-
-  componentWillRecieveProps(props){
-
-    function mapper(obj){
-      obj.tripOption.map((option,i)=>{
-        option[i].slice.map((slice,j)=>{
-          var price= option[i].saleTotal;
-
-          slice[j].segment.map((seg,k)=>{
-            seg[k].map((leg,l)=>{
-              var legO= leg[l].origin;
-              var legD= leg[l].destination;
-              var legDur= leg[l].duration;
-              var legAirline= leg[0].operatingDisclosure;
-              var depart= leg[l].departureTime;
-              var arrival= leg[0].arrivalTime;
-            })
-          })
-        })
-      })
-    }
-    mapper(this.props.results);
-  }
-
-
   render(){
-    const {
-    data,
-    tripOption,
-    }=this.props.results
-
-    return(
-      <div className='flight-info'>
-        <p>Airline</p>
-        <p>{'leg[l].operatingDisclosure'}</p>
-        <p>Price</p>
-        <p>{'option[i].saleTotal'}</p>
-        <p>Arrival Time</p>
-        <p>{'leg[l].departureTime'}</p>
-        <p>Departure Time</p>
-        <p>{'leg[l].departureTime'}</p>
-        <p>Duration</p>
-        <p>{'leg[l].duration'}</p>
+    console.log(this.props);
+    const legs = this.props.option.slice.map((leg,ind)=>(
+      <div key={ind}>
+        {leg.segment.map((seg, idx)=>(
+          <div key={idx}>
+            arrival: {seg.leg[0].arrivalTime}<br/>
+            departure: {seg.leg[0].departureTime}<br/>
+            duration: {seg.leg[0].duration}<br/>
+            origin: {seg.leg[0].origin}<br/>
+            destination: {seg.leg[0].destination}<br/>
+          </div>
+        ))}
       </div>
-    )
+    ))
+    return(
+        <div className='flight-info'>
+          <h1>Price: { this.props.option.pricing[0].saleTotal }</h1>
+          <div className='legs'>
+            {legs}
+            <br></br>
+          </div>
+
+        </div>
+      )
   }
 }
 

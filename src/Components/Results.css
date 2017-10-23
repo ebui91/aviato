@@ -1,0 +1,28 @@
+.flight-info{
+  border: 2px solid black;
+  margin: auto;
+  padding: 10px;
+  background-color: #f4f4f4;
+  font-size: 12px;
+  color: black;
+}
+
+.legs{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.flight-info:hover{
+  background-color: #111;
+  color: #f4f4f4;
+  zoom: 120%;
+  transition: 1s;
+}
+
+.flight-info:hover h1{
+  color: #32CD32;
+}
