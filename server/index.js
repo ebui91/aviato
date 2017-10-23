@@ -65,7 +65,7 @@ app.post('/api/flights', (req,res)=>{
     //return object back to React
     axios.post(`https://www.googleapis.com/qpxExpress/v1/trips/search?key=${config.key}`, configObj)
     .then(response=>{
-      // console.log(response.data);
+      // console.log(JSON.stringify(response.data));
       return res.json(response.data)
       // response.status(200).json(response.data);
     }).catch(err=>console.log(err));
